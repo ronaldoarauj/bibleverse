@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:thanksgiving/app/helpers/size_extensions.dart';
 import 'package:thanksgiving/app/theme/text_styles.dart';
+
+import 'theme/app_button.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -39,7 +42,7 @@ class _HomepageState extends State<Homepage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 16.0),
             if (message.isNotEmpty && message['book'] != null) ...[
@@ -85,6 +88,16 @@ class _HomepageState extends State<Homepage> {
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
+            Center(
+              child: AppButton(
+                width: context.percentWidth(.6),
+                height: 35,
+                label: 'VOLTAR',
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed('/voltar');
+                },
+              ),
+            )
           ],
         ),
       ),

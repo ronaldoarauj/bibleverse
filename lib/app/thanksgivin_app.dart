@@ -43,6 +43,7 @@ class _ThanksgivinAppState extends State<ThanksgivinApp> {
       home: const SplashPage(),
       routes: {
         '/home': (context) => const Homepage(),
+        '/voltar':(context) => const SplashPage(),
       },
     );
   }
